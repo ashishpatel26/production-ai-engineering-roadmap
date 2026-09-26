@@ -319,9 +319,13 @@ Learn:
 - Rollback strategy when a model or prompt update regresses quality
 
 Build:
-- Wire your eval suite (from stage 4) into a CI pipeline that blocks a merge on regression
+- Wire your eval suite (from stage 4) into a CI pipeline that blocks a merge on regression, and add an automated red-team/security scan (e.g. Promptfoo's built-in scanner) as a second gate
 
 ## 15. Production
+
+Resources:
+- [Promptfoo — CI/CD security & eval integration](https://www.promptfoo.dev/docs/integrations/ci-cd/)
+- [LangSmith — Observability & tracing docs](https://docs.langchain.com/langsmith/observability)
 
 Learn:
 - Observability
@@ -330,7 +334,6 @@ Learn:
 - Rate limiting
 - Caching
 - Load testing
-- Guardrails
 - Failure handling
 
 Track:
