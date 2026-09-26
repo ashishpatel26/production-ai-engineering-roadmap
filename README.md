@@ -6,6 +6,31 @@ Assumes basic ML/DL.
 
 Goal: Learn to build and ship production LLM + agent systems.
 
+```mermaid
+flowchart TD
+    A["1. LLM Internals<br/>attention · KV cache · tokenization"] --> B["2. LLM APIs & Tool Calling<br/>structured output · streaming"]
+    B --> C["3. RAG<br/>chunking · hybrid search · reranking"]
+    C --> D["4. Evals<br/>golden sets · LLM-as-judge"]
+    D --> E["5. Agents<br/>ReAct · planning · recovery"]
+    E --> F["6. Orchestration<br/>state machines · checkpoints"]
+    F --> G["7. Context Engineering<br/>memory · compression"]
+    G --> H["8. MCP<br/>build & connect a server"]
+    H --> I["9. Inference Engineering<br/>vLLM/SGLang · batching · quant"]
+    I --> J["10. AI Security<br/>prompt injection · sandboxing"]
+    J --> K["11. Production<br/>observability · cost · guardrails"]
+    K --> L(["🚀 Ship 3 Systems"])
+    L --> M1["Production RAG"]
+    L --> M2["Tool-using Agent"]
+    L --> M3["Production Agent Platform"]
+
+    classDef stage fill:#1e293b,stroke:#38bdf8,stroke-width:1px,color:#f1f5f9;
+    classDef ship fill:#0f766e,stroke:#2dd4bf,stroke-width:2px,color:#f0fdfa;
+    classDef project fill:#334155,stroke:#94a3b8,stroke-width:1px,color:#f1f5f9;
+    class A,B,C,D,E,F,G,H,I,J,K stage;
+    class L ship;
+    class M1,M2,M3 project;
+```
+
 ## 1. LLM Internals
 
 Resources:
