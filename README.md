@@ -17,13 +17,17 @@ Goal: Learn to build and ship production LLM + agent systems.
 - [2. LLM APIs + Tool Calling](#2-llm-apis--tool-calling)
 - [3. RAG](#3-rag)
 - [4. Evals](#4-evals)
-- [5. Agents](#5-agents)
-- [6. Orchestration](#6-orchestration)
-- [7. Context Engineering](#7-context-engineering)
-- [8. MCP](#8-mcp)
-- [9. Inference Engineering](#9-inference-engineering)
-- [10. AI Security](#10-ai-security)
-- [11. Production](#11-production)
+- [5. Fine-tuning & Post-training](#5-fine-tuning--post-training)
+- [6. Agents](#6-agents)
+- [7. Multi-agent Systems](#7-multi-agent-systems)
+- [8. Orchestration](#8-orchestration)
+- [9. Context Engineering](#9-context-engineering)
+- [10. MCP](#10-mcp)
+- [11. Inference Engineering](#11-inference-engineering)
+- [12. AI Security](#12-ai-security)
+- [13. Guardrails & Safety Tooling](#13-guardrails--safety-tooling)
+- [14. LLMOps & CI for LLM Apps](#14-llmops--ci-for-llm-apps)
+- [15. Production](#15-production)
 - [Build 3 Projects](#build-3-projects)
 - [Contributing](#contributing)
 - [License](#license)
@@ -41,13 +45,17 @@ Goal: Learn to build and ship production LLM + agent systems.
 - [ ] 2. LLM APIs + Tool Calling
 - [ ] 3. RAG
 - [ ] 4. Evals
-- [ ] 5. Agents
-- [ ] 6. Orchestration
-- [ ] 7. Context Engineering
-- [ ] 8. MCP
-- [ ] 9. Inference Engineering
-- [ ] 10. AI Security
-- [ ] 11. Production
+- [ ] 5. Fine-tuning & Post-training
+- [ ] 6. Agents
+- [ ] 7. Multi-agent Systems
+- [ ] 8. Orchestration
+- [ ] 9. Context Engineering
+- [ ] 10. MCP
+- [ ] 11. Inference Engineering
+- [ ] 12. AI Security
+- [ ] 13. Guardrails & Safety Tooling
+- [ ] 14. LLMOps & CI for LLM Apps
+- [ ] 15. Production
 - [ ] Project 1 — Production RAG
 - [ ] Project 2 — Tool-using agent
 - [ ] Project 3 — Production agent platform
@@ -57,23 +65,27 @@ flowchart TD
     A["1. LLM Internals<br/>attention · KV cache · tokenization"] --> B["2. LLM APIs & Tool Calling<br/>structured output · streaming"]
     B --> C["3. RAG<br/>chunking · hybrid search · reranking"]
     C --> D["4. Evals<br/>golden sets · LLM-as-judge"]
-    D --> E["5. Agents<br/>ReAct · planning · recovery"]
-    E --> F["6. Orchestration<br/>state machines · checkpoints"]
-    F --> G["7. Context Engineering<br/>memory · compression"]
-    G --> H["8. MCP<br/>build & connect a server"]
-    H --> I["9. Inference Engineering<br/>vLLM/SGLang · batching · quant"]
-    I --> J["10. AI Security<br/>prompt injection · sandboxing"]
-    J --> K["11. Production<br/>observability · cost · guardrails"]
-    K --> L(["🚀 Ship 3 Systems"])
-    L --> M1["Production RAG"]
-    L --> M2["Tool-using Agent"]
-    L --> M3["Production Agent Platform"]
+    D --> E["5. Fine-tuning & Post-training<br/>LoRA/QLoRA · DPO/RLHF"]
+    E --> F["6. Agents<br/>ReAct · planning · recovery"]
+    F --> G["7. Multi-agent Systems<br/>orchestrator-worker · handoffs"]
+    G --> H["8. Orchestration<br/>state machines · checkpoints"]
+    H --> I["9. Context Engineering<br/>memory · compression"]
+    I --> J["10. MCP<br/>build & connect a server"]
+    J --> K["11. Inference Engineering<br/>vLLM/SGLang · batching · quant"]
+    K --> L["12. AI Security<br/>prompt injection · sandboxing"]
+    L --> M["13. Guardrails & Safety Tooling<br/>NeMo Guardrails · Llama Guard"]
+    M --> N["14. LLMOps & CI<br/>prompt versioning · regression gates"]
+    N --> O["15. Production<br/>observability · cost · failure handling"]
+    O --> P(["🚀 Ship 3 Systems"])
+    P --> M1["Production RAG"]
+    P --> M2["Tool-using Agent"]
+    P --> M3["Production Agent Platform"]
 
     classDef stage fill:#1e293b,stroke:#38bdf8,stroke-width:1px,color:#f1f5f9;
     classDef ship fill:#0f766e,stroke:#2dd4bf,stroke-width:2px,color:#f0fdfa;
     classDef project fill:#334155,stroke:#94a3b8,stroke-width:1px,color:#f1f5f9;
-    class A,B,C,D,E,F,G,H,I,J,K stage;
-    class L ship;
+    class A,B,C,D,E,F,G,H,I,J,K,L,M,N,O stage;
+    class P ship;
     class M1,M2,M3 project;
 ```
 
@@ -99,6 +111,7 @@ Learn:
 - Function/tool calling
 - Streaming
 - Retries, rate limits, token usage
+- Multimodal inputs (vision, audio) — most provider APIs now accept images/audio alongside text; the same tool-calling patterns apply
 
 Build:
 - An API-based LLM application
@@ -139,7 +152,24 @@ Learn:
 Build:
 - An eval suite for your RAG system
 
-## 5. Agents
+## 5. Fine-tuning & Post-training
+
+Resources:
+- [Hugging Face — PEFT documentation (LoRA / QLoRA)](https://huggingface.co/docs/peft/)
+- [Hugging Face — TRL documentation (SFT / DPO / RLHF)](https://huggingface.co/docs/trl/)
+
+Learn:
+- When to fine-tune vs. prompt/RAG (cost, latency, and data tradeoffs)
+- Supervised fine-tuning (SFT)
+- Parameter-efficient fine-tuning: LoRA, QLoRA
+- Preference optimization: RLHF, DPO
+- Distillation from a larger model into a smaller one
+- Dataset curation for fine-tuning (quality > quantity)
+
+Build:
+- Fine-tune a small open-weight model on a narrow task and compare it against a prompted baseline on your eval suite
+
+## 6. Agents
 
 Resources:
 - [Anthropic — Building Effective Agents](https://www.anthropic.com/engineering/building-effective-agents)
@@ -159,7 +189,23 @@ Learn:
 Build:
 - An agent with 3–5 real tools
 
-## 6. Orchestration
+## 7. Multi-agent Systems
+
+Resources:
+- [Anthropic — How we built our multi-agent research system](https://www.anthropic.com/engineering/multi-agent-research-system)
+- [CrewAI documentation](https://docs.crewai.com/)
+
+Learn:
+- Orchestrator/lead–worker (subagent) patterns
+- Task decomposition and delegation
+- Parallel vs. sequential subagent execution
+- Coordination failure modes (duplicated work, context loss between agents)
+- Evaluating multi-agent systems (harder than single-agent evals)
+
+Build:
+- Convert your single agent into an orchestrator that delegates to 2–3 specialized subagents
+
+## 8. Orchestration
 
 Resources:
 - [LangGraph documentation](https://docs.langchain.com/oss/python/langgraph/overview)
@@ -175,7 +221,7 @@ Learn:
 Build:
 - Convert your agent into an explicit stateful workflow
 
-## 7. Context Engineering
+## 9. Context Engineering
 
 Resources:
 - [Anthropic — Effective Context Engineering for AI Agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)
@@ -192,7 +238,7 @@ Learn:
 Build:
 - A context layer for your agent
 
-## 8. MCP
+## 10. MCP
 
 Resources:
 - [modelcontextprotocol.io](https://modelcontextprotocol.io/)
@@ -204,7 +250,7 @@ Build:
 - One real MCP server for a tool you use
 - Connect it to your agent
 
-## 9. Inference Engineering
+## 11. Inference Engineering
 
 Resources:
 - [vLLM documentation](https://docs.vllm.ai/)
@@ -226,7 +272,7 @@ Measure:
 - GPU memory
 - Cost/request
 
-## 10. AI Security
+## 12. AI Security
 
 Resources:
 - [OWASP — GenAI Security Project / Top 10 for LLM & GenAI](https://genai.owasp.org/)
@@ -242,7 +288,40 @@ Learn:
 - Authorization
 - Sandboxing
 
-## 11. Production
+## 13. Guardrails & Safety Tooling
+
+Resources:
+- [NVIDIA NeMo Guardrails documentation](https://docs.nvidia.com/nemo/guardrails/)
+- [Meta Llama Guard model cards](https://www.llama.com/docs/model-cards-and-prompt-formats/meta-llama-guard-2/)
+- [Promptfoo — CI/CD security & eval integration](https://www.promptfoo.dev/docs/integrations/ci-cd/)
+
+Learn:
+- Input/output moderation and content classifiers
+- Jailbreak and prompt-injection detection
+- PII detection and redaction
+- Topic/scope restriction ("stay on topic" guardrails)
+- Trading off guardrail strictness against false-positive rate
+
+Build:
+- Add an input and output guardrail layer to the agent you built in stage 6/7 and measure its false-positive rate on real traffic
+
+## 14. LLMOps & CI for LLM Apps
+
+Resources:
+- [Promptfoo documentation](https://www.promptfoo.dev/docs/intro/)
+- [LangSmith — Observability & tracing docs](https://docs.langchain.com/langsmith/observability)
+
+Learn:
+- Prompt versioning and diffing
+- Regression testing in CI (eval suite as a merge gate)
+- Shadow deployments and canary releases for prompt/model changes
+- Dataset drift detection
+- Rollback strategy when a model or prompt update regresses quality
+
+Build:
+- Wire your eval suite (from stage 4) into a CI pipeline that blocks a merge on regression
+
+## 15. Production
 
 Learn:
 - Observability
