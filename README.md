@@ -9,8 +9,8 @@ Goal: Learn to build and ship production LLM + agent systems.
 ## 1. LLM Internals
 
 Resources:
-- Karpathy — Neural Networks: Zero to Hero
-- Jay Alammar — The Illustrated Transformer
+- [Karpathy — Neural Networks: Zero to Hero](https://karpathy.ai/zero-to-hero.html)
+- [Jay Alammar — The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)
 
 Build:
 - Implement a small GPT from scratch
@@ -19,9 +19,9 @@ Build:
 ## 2. LLM APIs + Tool Calling
 
 Resources:
-- Anthropic — Prompt Engineering Guide
-- OpenAI / Anthropic API docs
-- Medium — LLM Function Calling Explained
+- [Anthropic — Prompt Engineering Guide](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview)
+- [Anthropic API docs](https://docs.anthropic.com/) / [OpenAI API docs](https://platform.openai.com/docs)
+- Medium — search ["LLM function calling"](https://medium.com/search?q=llm%20function%20calling) *(no single canonical article verified — pick a well-reviewed one)*
 
 Learn:
 - Structured outputs
@@ -35,10 +35,10 @@ Build:
 ## 3. RAG
 
 Resources:
-- Simon Willison — Embeddings / RAG
-- Pinecone — RAG guides
-- Medium — Modern RAG in 2026
-- Medium — Reranking for RAG
+- [Simon Willison — Embeddings / RAG posts](https://simonwillison.net/tags/embeddings/)
+- [Pinecone — Learning Center (RAG guides)](https://www.pinecone.io/learn/)
+- Medium — search ["modern RAG"](https://medium.com/search?q=modern%20rag) *(no single canonical article verified)*
+- Medium — search ["reranking RAG"](https://medium.com/search?q=reranking%20rag) *(no single canonical article verified)*
 
 Learn:
 - Chunking
@@ -55,8 +55,8 @@ Build:
 ## 4. Evals
 
 Resources:
-- Hamel Husain — AI Evals
-- Medium — Evaluating RAG Pipelines
+- [Hamel Husain — AI Evals (free email course)](https://ai.hamel.dev/eval-course)
+- Medium — search ["evaluating RAG pipelines"](https://medium.com/search?q=evaluating%20rag%20pipelines) *(no single canonical article verified)*
 
 Learn:
 - Golden datasets
@@ -71,10 +71,10 @@ Build:
 ## 5. Agents
 
 Resources:
-- Anthropic — Building Effective Agents
-- Sam Witteveen — Agents / Tool Use
-- James Briggs — ReAct / Tool Use
-- Medium — From LLMs to Agents
+- [Anthropic — Building Effective Agents](https://www.anthropic.com/engineering/building-effective-agents)
+- [Sam Witteveen — YouTube channel](https://www.youtube.com/@samwitteveenai)
+- [James Briggs — YouTube channel](https://www.youtube.com/c/jamesbriggs)
+- Medium — search ["from LLMs to agents"](https://medium.com/search?q=from%20llms%20to%20agents) *(no single canonical article verified)*
 
 Learn:
 - Tool use
@@ -91,8 +91,8 @@ Build:
 ## 6. Orchestration
 
 Resources:
-- LangGraph documentation
-- Anthropic agent engineering articles
+- [LangGraph documentation](https://docs.langchain.com/oss/python/langgraph/overview)
+- [Anthropic engineering blog](https://www.anthropic.com/engineering)
 
 Learn:
 - State machines
@@ -107,8 +107,8 @@ Build:
 ## 7. Context Engineering
 
 Resources:
-- Anthropic — Effective Context Engineering for AI Agents
-- Medium — Context Engineering for Agentic Applications
+- [Anthropic — Effective Context Engineering for AI Agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)
+- Medium — search ["context engineering agentic applications"](https://medium.com/search?q=context%20engineering%20agentic%20applications) *(no single canonical article verified)*
 
 Learn:
 - Context selection
@@ -124,10 +124,10 @@ Build:
 ## 8. MCP
 
 Resources:
-- modelcontextprotocol.io
-- Anthropic — MCP
-- Medium — MCP Foundations
-- Medium — MCP in Production
+- [modelcontextprotocol.io](https://modelcontextprotocol.io/)
+- [Anthropic — Introducing the Model Context Protocol](https://www.anthropic.com/news/model-context-protocol)
+- Medium — search ["MCP foundations"](https://medium.com/search?q=mcp%20foundations) *(no single canonical article verified)*
+- Medium — search ["MCP in production"](https://medium.com/search?q=mcp%20in%20production) *(no single canonical article verified)*
 
 Build:
 - One real MCP server for a tool you use
@@ -136,9 +136,9 @@ Build:
 ## 9. Inference Engineering
 
 Resources:
-- vLLM documentation
-- SGLang documentation
-- Hugging Face documentation
+- [vLLM documentation](https://docs.vllm.ai/)
+- [SGLang documentation](https://docs.sglang.io/)
+- [Hugging Face documentation](https://huggingface.co/docs)
 
 Learn:
 - KV cache
@@ -158,9 +158,9 @@ Measure:
 ## 10. AI Security
 
 Resources:
-- OWASP — LLM / GenAI Security
-- Google Cloud — AI Security Evaluation
-- Medium — AI Agent Security
+- [OWASP — GenAI Security Project / Top 10 for LLM & GenAI](https://genai.owasp.org/)
+- [Google Cloud — Secure AI Framework (SAIF)](https://cloud.google.com/use-cases/secure-ai-framework)
+- Medium — search ["AI agent security"](https://medium.com/search?q=ai%20agent%20security) *(no single canonical article verified)*
 
 Learn:
 - Prompt injection
@@ -212,4 +212,4 @@ For every project, publish:
 
 **Primary sources > AI roadmap listicles.** Medium is useful for implementation experience. Vendor docs, papers, specs, and engineering blogs should be your source of truth.
 
-**Recommended book:** *AI Engineering* — Chip Huyen
+**Recommended book:** [*AI Engineering* — Chip Huyen](https://www.oreilly.com/library/view/ai-engineering/9781098166298/) ([book resources on GitHub](https://github.com/chiphuyen/aie-book))
