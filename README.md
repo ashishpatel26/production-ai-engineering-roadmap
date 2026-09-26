@@ -2,9 +2,55 @@
 
 🚀 Zero → AI Engineer Roadmap (2026)
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#contributing)
+[![Stars](https://img.shields.io/github/stars/ashishpatel26/production-ai-engineering-roadmap?style=social)](https://github.com/ashishpatel26/production-ai-engineering-roadmap/stargazers)
+[![Follow on LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ashishpatel2604/)
+
 Assumes basic ML/DL.
 
 Goal: Learn to build and ship production LLM + agent systems.
+
+## Table of Contents
+
+- [1. LLM Internals](#1-llm-internals)
+- [2. LLM APIs + Tool Calling](#2-llm-apis--tool-calling)
+- [3. RAG](#3-rag)
+- [4. Evals](#4-evals)
+- [5. Agents](#5-agents)
+- [6. Orchestration](#6-orchestration)
+- [7. Context Engineering](#7-context-engineering)
+- [8. MCP](#8-mcp)
+- [9. Inference Engineering](#9-inference-engineering)
+- [10. AI Security](#10-ai-security)
+- [11. Production](#11-production)
+- [Build 3 Projects](#build-3-projects)
+- [Contributing](#contributing)
+- [License](#license)
+
+## How to use this roadmap
+
+- Go **in order** — each stage assumes the previous one. Don't skip to agents before you understand RAG and evals.
+- **Time-box each stage** (roughly 1–2 weeks) and don't move on until you've shipped the "Build" item, not just read the resource.
+- **Build > read.** A roadmap without a working repo attached to it is just a reading list.
+- Track your progress with the checklist below — fork this repo and check off stages as you complete them.
+
+### Progress checklist
+
+- [ ] 1. LLM Internals
+- [ ] 2. LLM APIs + Tool Calling
+- [ ] 3. RAG
+- [ ] 4. Evals
+- [ ] 5. Agents
+- [ ] 6. Orchestration
+- [ ] 7. Context Engineering
+- [ ] 8. MCP
+- [ ] 9. Inference Engineering
+- [ ] 10. AI Security
+- [ ] 11. Production
+- [ ] Project 1 — Production RAG
+- [ ] Project 2 — Tool-using agent
+- [ ] Project 3 — Production agent platform
 
 ```mermaid
 flowchart TD
@@ -238,3 +284,15 @@ For every project, publish:
 **Primary sources > AI roadmap listicles.** Medium is useful for implementation experience. Vendor docs, papers, specs, and engineering blogs should be your source of truth.
 
 **Recommended book:** [*AI Engineering* — Chip Huyen](https://www.oreilly.com/library/view/ai-engineering/9781098166298/) ([book resources on GitHub](https://github.com/chiphuyen/aie-book))
+
+## Contributing
+
+This list is continuously updated. Found a broken link, a better resource, or want to add your own project write-up? PRs and issues are welcome — please make sure any link you add is tested and working before opening a PR.
+
+## License
+
+Released under the [MIT License](./LICENSE).
+
+---
+
+Maintained by [Ashish Patel](https://github.com/ashishpatel26) — follow on [LinkedIn](https://www.linkedin.com/in/ashishpatel2604/) for more AI/ML resources.
